@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base-blue : #15548E,
+  --blue-muted : #D8E8F6,
+  --muted : #F5F5F5,
+  --muted-foreground : #D9D9D9 ,
+  --white : #FFFFFF,
+  --black : #141111,
+  --destruction-red : #D93842,
+  --destruction-green : #62D938,
+  --customPink : #F0C0CP,
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+
+} */
+
+body {
+  /* background: rgb(2,6,23); */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.hamMenu {
+  height : 0px;
+  animation : hideNav 0.5s ease-out ;
+}
+.hamMenuOn {
+  height : 100%;
+  animation : showNav 0.5s ease-out ;
+}
+
+@keyframes showNav {
+  from {
+    height : 0;
+  }to {
+    height : 100%
+  }
+}
+@keyframes hideNav {
+  from {
+    height : 200px;
+  }to {
+    height : 0px
+  }
+}
