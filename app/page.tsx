@@ -1,8 +1,7 @@
 'use client'
-import Hero from "@/component/hero";
-import { MobileNav } from "@/component/menuHamburger";
-import { NavBar } from "@/component/navBar";
-import Sidebar from "@/component/sidebare/sidebare";
+import Hero from "@/components/home/hero";
+import { MobileNav } from "@/components/home/menuHamburger";
+import { NavBar } from "@/components/home/navBar";
 import { useState } from "react";
 
 export default function Home() {

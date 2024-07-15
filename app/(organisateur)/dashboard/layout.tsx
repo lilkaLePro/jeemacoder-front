@@ -1,5 +1,5 @@
-import { Container } from "@/component/container";
-import { SideBar } from "@/component/dashboards/NavBar";
+import { Container } from "@/components/container";
+import { SideBar } from "@/components/dashboards/sideBar";
 
 export default function Layout ({children} : {children : React.ReactNode}) {
 

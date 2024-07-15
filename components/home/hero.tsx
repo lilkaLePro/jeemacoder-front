@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './button'
+import { Button } from '../button' 
 
 function Hero() {
   return (<div>
@@ -16,11 +16,11 @@ function Hero() {
 
   <div className="flex justify-center items-center gap-3 p-5">
     
-    <Button href="/connexion" className="bg-dark-blue  text-white text-lg border-2 border-dark-blue  hover:bg-transparent hover:text-dark-blue">
+    <Button href="/regsiter" className="bg-dark-blue  text-white text-lg border-2 border-dark-blue  hover:bg-transparent hover:text-dark-blue">
       Se connecter
     </Button>
-    <Button href="/inscription" className="bg-none border-2 border-dark-blue text-white text-lg hover:bg-dark-blue transition-all">
-      S'inscrire
+    <Button href="/login" className="bg-none border-2 border-dark-blue text-white text-lg hover:bg-dark-blue transition-all">
+      S&apos;inscrire
     </Button>
   </div>
   </div>)

@@ -1,7 +1,6 @@
 "use client";
-import { Button } from "@/component/form/button";
-import { Checkbox } from "@/component/form/checkox";
-import FormInput from "@/component/form/input";
+import { Button } from "@/components/form/button";
+import FormInput from "@/components/form/input";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";

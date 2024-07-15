@@ -1,4 +1,4 @@
-import { Button } from "@/component/button";
+import { Button } from "@/components/button";
 import { PlusCircledIcon } from "@radix-ui/react-icons";
 
 export default function Page () {
