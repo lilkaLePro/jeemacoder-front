@@ -6,10 +6,10 @@ import { NavLinks } from "./navLink"
 export const SideBar = () => {
     return (<div className="h-screen max-w-60 flex flex-col justify-between bg-white">
         <div>
-            <div className="h-20 w-full border ">
+            <div className="h-20 w-full ">
               
             </div>
-            <div className="border">
+            <div className="">
             <ListItem 
                     items={dashboardLinkData}
                     resourcename="links"

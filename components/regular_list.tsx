@@ -1,4 +1,3 @@
-"use client"
 
 export const ListItem = ({items , resourcename , component : Component , className} : {
     items : any[] , 
