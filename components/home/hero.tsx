@@ -16,10 +16,10 @@ function Hero() {
 
   <div className="flex justify-center items-center gap-3 p-5">
     
-    <Button types='link' size='small' href="/user_role" className="">
+    <Button types='link' size='small' href="/login" className="">
       Se connecter
     </Button>
-    <Button types='link' size='small' href="/login" className="border-none">
+    <Button types='link' size='small' href="/user_role" className="border-none">
       S&apos;inscrire
     </Button>
   </div>
