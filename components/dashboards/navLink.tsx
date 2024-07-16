@@ -3,23 +3,28 @@ import clsx from "clsx"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-
-
 export const NavLinks = ({links} : {
     links : {
         link : string , 
         href : string , 
-        icone ?: React.ElementType}}) => {
-    const {link , href , icone : Icone} = links
+        icon ?: React.ElementType , 
+        icon2 : React.ElementType
+    }}) => {
+    const {link , href , icon : Icon , icon2 : Icon2} = links
     const pathName = usePathname()
 
     return <ul className="">
-                    <li className={clsx("px-5 flex w-full py-2 gap-5 items-center" , 
-                    {"bg-[#FFE7C4] text-[#FF9700] font-semibold" : pathName == href})}>
-                    {Icone ? <Icone /> : null}
-                    <Link href={href} className="text-sm">
+                    <li className={clsx("flex w-full rounded-lg items-center hover:bg-white" , 
+                    {
+                        "bg-white border-muted-foreground border  text-[#FF9700] " : pathName == href})}>
+                    <Link href={href} className="text-sm w-full flex p-3 gap-5 items-center">
+                    
+                    {Icon ? <Icon /> : null}
+                    
                         {link}
+                    
                     </Link>
+                    {Icon2 ? <Icon2 className="w-10 h-8 mr-3 hover:border hover:rounded-full hover:bg-muted" /> : null}
                 </li>
     </ul>  
 }

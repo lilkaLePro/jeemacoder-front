@@ -4,11 +4,7 @@ export const linkData:LinkData[] = [
   {href : '/' , link : 'acceuil'},
   {href : '' , link : 'service'},
   {href : '' , link : 'FAQ'}
-]
-export const dashboardLinkData:LinkData[] = [
-  {href : '/dashboard' , link : 'dashboard'},
-  {href : '/dashboard/' , link : 'overview'},
-  {href : '/dashboard/' , link : 'hackathons'}
+
 ]
 
 export const hackathons = [
