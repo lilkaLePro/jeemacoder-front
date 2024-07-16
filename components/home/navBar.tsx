@@ -26,7 +26,7 @@ export const NavBar = () => {
         />
       </div>
       <div className="flex gap-5">
-        <Link href="/" className="font-semibold text-white border px-4 rounded-md py-1">
+        <Link href="/listhackathons" className="font-semibold text-white border px-4 rounded-md py-1">
           Rejoindre un hackaton
         </Link>
       </div>

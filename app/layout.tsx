@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jemacoder ",
@@ -19,7 +17,7 @@ export default function RootLayout({
       <head>
         <meta name="csrf-token" content="{{ csrf_token() }}" ></meta>
       </head>
-      <body className={inter.className}>
+      <body>
           
         {children}
       

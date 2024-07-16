@@ -1,7 +1,6 @@
 import Image from "next/image"
-import { Xicon } from "../ui/icon/x"
 
-export const HackthonCard = ({hackathonCard} : {hackathonCard: {
+export const SmallHackthonCard = ({hackathonCard} : {hackathonCard: {
     image_url : string , 
     date_debut : string , 
     name : string , 
