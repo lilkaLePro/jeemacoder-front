@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "../button"
+import { ImgCollpsed } from "./img-collabsed"
 
 export const HackathonCard = ({hackathon} : {hackathon : {
     logo_url : string , 
@@ -13,17 +14,20 @@ export const HackathonCard = ({hackathon} : {hackathon : {
     const {logo_url , date_debut , name , organisateur , description , status , participants } = hackathon
 
     return (
-        <div className="max-w-3xl border-b p-5 flex flex-col gap-4 ">
+        <div className="max-w-4xl border-b p-10 flex flex-col gap-4 hover:bg-muted cursor-pointer ">
             <div className="flex gap-3">
-                <Image src={`/${logo_url}`} 
+                <div>
+                <Image src={`${logo_url}`} 
                     width={100} 
-                    height={70} 
+                    height={80} 
                     alt="hack logo" 
                     className="border rounded-md"/>
+                    <div>{status} </div>
+                </div>
                 <div>
-                    <p>{date_debut} </p>
-                    <h1 className="mt-2">{name} </h1>
-                    <h2>{organisateur} </h2>
+                    <p className="text-sm italic">{date_debut} </p>
+                    <h1 className="text-2xl">{name} </h1>
+                    <h2 className="text-lg ">organisateur : {organisateur} </h2>
                 </div>
             </div>
             <div>
@@ -31,10 +35,13 @@ export const HackathonCard = ({hackathon} : {hackathon : {
             </div>
             <div  className="flex justify-between">
                 <div className="flex gap-4">
-                    <Button types="link" size="small" className="" href=""> Deatails </Button>
-                    <Button types="link" size="small" className="" href=""> Participer </Button>
+                    <Button types="button" size="small" className="" href=""> Deatails </Button>
+                    <Button types="button" size="small" className="" href=""> Participer </Button>
                 </div>
-                <div>+{participants}participants</div>
+                <div className="flex items-center gap-4">
+                    <div> <ImgCollpsed /> </div>
+                    <div className="font-semibold text-sm">+{participants}participants</div>
+                </div>
             </div>
         </div>
     )

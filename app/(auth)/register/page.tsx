@@ -78,7 +78,7 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
           <form className="" onSubmit={handleSubmit}>
           <span className="">Inscrivez vous et participez à des hackathons </span>
             <div className="flex flex-col gap-7 py-10">
-             <div className="flex flex-col gap-5">
+             <div className="flex flex-col gap-2">
               <div className="flex gap-3 ">
               <FormInput
                     type="name"
@@ -102,7 +102,7 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
               <FormInput
                 id="email"
                 type="email"
-                placeholder="email"
+                placeholder="Email"
                 value={value.email}
                 onChange={handleChange}
                 className=""
@@ -118,9 +118,9 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
                     label="Password"
                   />
                   <FormInput
-                  id='metier'
+                  id='profession'
                     type="name"
-                    placeholder="developpeur"
+                    placeholder="Enter your proffession"
                     value={value.metier}
                     onChange={handleChange}
                     className=""
@@ -129,7 +129,7 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
                   <div className="flex gap-3 ">
                   <FormInput
                     type="text"
-                    placeholder="Entrez votre prenom"
+                    placeholder="Entrez votre pays"
                     value={value.pays}
                     className="w-44"
                     label="Pays"
@@ -138,7 +138,7 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
                   />
                   <FormInput
                     type="text"
-                    placeholder="Entrez votre nom"
+                    placeholder="Entrez votre ville"
                     value={value.ville}
                     onChange={handleChange}
                     className="w-44"
@@ -159,8 +159,10 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
   </form>
   </div>
   <div className="w-full md:w-1/2 mt-4 md:mt-0">
-          <Image src="/" alt="" className="w-full" width={300} height={300}/>
-        </div>
+    {
+      
+    }
+  </div>
   </div>
   );
 }

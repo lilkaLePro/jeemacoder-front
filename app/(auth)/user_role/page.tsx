@@ -7,8 +7,7 @@ export default function Page() {
     const participant = 'participant'
 
     return (
-    <div className="h-screen ">
-        <div className="max-w-2xl rounded-md m-auto flex flex-col gap-10 border">
+    <div className="h-screen max-w-2xl justify-center items-center flex flex-col m-auto gap-3">
         
         <div> vous souhaitez nous rejoindre en tant que : </div>
         
@@ -18,8 +17,9 @@ export default function Page() {
                 role : organisateur
             },
         }}
-        className={clsx('w-full border h-20 p-5 -mb-3')}>
-            organisateur
+        className={clsx('w-full border')}>
+            <h1>Organisateur</h1>
+            <p>En tant que organisateur vous pouvez </p>
         </Link>
         <Link href={{
             pathname : "/register",
@@ -27,9 +27,9 @@ export default function Page() {
                 role : participant
             },
         }}
-        className={clsx('w-full border h-20 p-5 -mb-3')}>
-            participant
+        className={clsx('w-full border')}>
+            <h1>participant</h1>
+            <p>En tant que organisateur vous pouvez </p>
         </Link>
-    </div>
     </div>)
 }

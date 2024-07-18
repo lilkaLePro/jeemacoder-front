@@ -26,7 +26,7 @@ const TableRow: React.FC<TableProps> = ({ data, headers }) => {
     <div className="overflow-x-auto flex justify-center w-full max-w-4xl">
       <table className="min-w-full bg-white max-md:flex ">
         <thead >
-          <tr className="bg-[#FFE7C4] text-xs leading-tight max-md:flex max-md:flex-col">
+          <tr className="bg-gray-foreground text-xs leading-tight max-md:flex max-md:flex-col">
             {headers.map((header, index) => (
               <th key={index} className="py-3 max-md:py-4 px-4 text-left">{header}</th>
             ))}
@@ -34,9 +34,9 @@ const TableRow: React.FC<TableProps> = ({ data, headers }) => {
         </thead>
         <tbody className="text-gray-600 text-xs font-light max-md:flex">
           {data.map((item, index) => (
-            <tr key={index} className="border-b border-gray-200 hover:bg-gray-100 max-md:flex max:md:flex-col">
+            <tr key={index} className="border-b border-gray-200 hover:bg-gray-100 max-md:flex max-md:flex-col">
               {Object.values(item).map((value, index) => (
-                <td key={index} className="py-4 px-4 text-left">{value}</td>
+                <td key={index} className="py-4 px-4 text-left max-sm:py-3">{value}</td>
               ))}
             </tr>
           ))}

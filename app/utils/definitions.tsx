@@ -3,5 +3,4 @@ export type LinkData = {
     link : string,
     icon ?: React.ElementType,
     icon2 ?: React.ElementType
-
 }

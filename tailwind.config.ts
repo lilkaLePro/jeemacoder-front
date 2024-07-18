@@ -24,7 +24,9 @@ const config: Config = {
             // 
             "light-green" : "#62D938",
             "dark-green" : "#0F4424",
-            "dark-green-hover" : "#18793F"
+            "dark-green-hover" : "#18793F",
+            "light-orange" : "rgba(237, 159, 87, 0.07)",
+            "dark" : "#2A0003"
       },
     },
   },

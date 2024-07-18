@@ -55,7 +55,7 @@ export default function Page() {
               <FormInput
                 id="email"
                 type="email"
-                placeholder="example@gmail.com"
+                placeholder="Example@gmail.com"
                 value={value.email}
                 onChange={handleChange}
                 className=""

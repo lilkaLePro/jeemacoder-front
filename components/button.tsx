@@ -7,7 +7,7 @@ export type ButtonProps = ComponentPropsWithoutRef<"button"> & {
     size : "large" | "small"
     className ?: string ;
     types : "button" | "link",
-    href : string
+    href ?: string
 }
 
 export const Button = ({className , 
@@ -18,23 +18,24 @@ export const Button = ({className ,
     return types === "button" ? (
     <button className={clsx(
     {
-        "m-auto border rounded-md" : variant === "default",
+        "border rounded-md" : variant === "default",
         "m-auto border rounded-full" : variant === "rounded",
-        "px-3 py-1" : variant === "danger",
-        "px-8 py-3" : size === "large", "" : size === "small",
+        "px-3 py-1 bg-red-500" : variant === "danger",
+        "px-8 py-3" : size === "large", 
+        "px-3 py-1 flex gap-3 items-center" : size === "small",
     } , className)} 
     {...props}
     >
         {props.children}
     </button>
   ) : (
-    <Link href={href} className={clsx(
+    href && <Link href={href} className={clsx(
         {
             "border rounded-md" : variant === "default",
             "border rounded-full" : variant === "rounded",
             "" : variant === "grounded",
             "" : variant === "danger",
-            "px-8 py-3" : size === "large", "px-3 py-1" : size === "small",
+            "px-8 py-3" : size === "large", "px-3 py-1 border flex items-center gap-2" : size === "small",
         } , className)} 
         >
         {props.children}
