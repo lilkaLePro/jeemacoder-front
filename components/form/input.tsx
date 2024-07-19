@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import React, { ChangeEvent } from 'react'
 
-export default function FormInput({id , type = "text", value, placeholder, className, label , required , onChange} : 
+export default function FormInput({id , type = "text", value, placeholder, className, label , required , onChange } : 
     {id ?: string , 
     type ?: string , 
     value :  string|number, 
@@ -12,7 +12,7 @@ export default function FormInput({id , type = "text", value, placeholder, class
     className: string, 
     label ?: string , 
     required ?: boolean,
-    onChange : (e : ChangeEvent<HTMLInputElement>) => void 
+    onChange : (e : ChangeEvent<HTMLInputElement>) => void
 }) {
   return (
     <div className='max-w-xl text-dark-green '>
@@ -28,7 +28,8 @@ export default function FormInput({id , type = "text", value, placeholder, class
               value={value} 
               onChange={onChange}
               placeholder={placeholder}
-              className={clsx('font-semibold w-full text- placeholder:text-[#636364] focus:border-light-green outline-none px-6 py-3 rounded-md bg-muted text-sm border' , className)} />
+              className={clsx('font-semibold w-full placeholder:text-[#636364] focus:border-light-green outline-none px-6 py-3 rounded-md bg-muted text-sm border max-sm:px-2 max-sm:py-2 max-sm:placeholder:text-xs'
+            , className)} />
         </div>
     </div>
   )

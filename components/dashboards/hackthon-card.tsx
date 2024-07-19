@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Button } from "../button"
 import { ImgCollpsed } from "./img-collabsed"
+import { useState } from "react"
 
-export const HackathonCard = ({hackathon} : {hackathon : {
+export const HackathonCard = ({hackathons , onclick } : {onclick ?: () => void , hackathons : {
     logo_url : string , 
     date_debut : string,
     name : string ,
@@ -11,13 +12,18 @@ export const HackathonCard = ({hackathon} : {hackathon : {
     status : "passe" | "encour" | "arriving" ,
     participants : number
 }}) => {
-    const {logo_url , date_debut , name , organisateur , description , status , participants } = hackathon
-
+    const {logo_url , date_debut , name , organisateur , description , 
+            status , participants } = hackathons
+    const backend_url = process.env.NEXT_BUBLIC_BACKEND_URL;
+   
+    console.log(backend_url);
+    
     return (
-        <div className="max-w-4xl border-b p-10 flex flex-col gap-4 hover:bg-muted cursor-pointer ">
+        <div onClick={onclick}
+            className="max-w-4xl border-b p-10 flex flex-col gap-4 hover:bg-muted cursor-pointer ">
             <div className="flex gap-3">
                 <div>
-                <Image src={`${logo_url}`} 
+                <Image src={`/${backend_url}/public/storage/3pnTa.jpg`} 
                     width={100} 
                     height={80} 
                     alt="hack logo" 

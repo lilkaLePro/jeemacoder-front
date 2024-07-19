@@ -1,5 +1,5 @@
 "use client"
-import { hackathons } from "@/app/utils/data";
+import { hackathons } from "@/app/utils/placeholder-data";
 import { Button } from "@/components/button";
 import { HackathonTable } from "@/components/dashboards/hackathonsTableList";
 import { SmallHackthonCard } from "@/components/dashboards/small-hackhton-card";
@@ -17,9 +17,7 @@ export default function Page () {
                 <h1 className="text-sm">Dashboard</h1>
                 <p className="text-xs text-[#636364]"> Ici vous avez une vue generale de vos Hackathons </p>
             </div>
-            <Button types="button" size="large" onClick={ ()=> setShowModal(!showModal) }
-                className="border bg-[#F47E11] text-white rounded-md mt-2"> Nouveau hackaton 
-            </Button>
+            <Button href="/createNewHackathon" types="link" size="large" className="border bg-[#F47E11] text-white rounded-md mt-2"> Nouveau hackaton </Button>
             
             <Modal showModal={showModal} 
                 onClose={ ()=> setShowModal(false)}

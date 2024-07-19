@@ -73,8 +73,8 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
     
 }
   return (
-    <div className="h-screen flex justify-center items-center max-w-4xl m-auto">
-        <div className="max-w-3xl m-auto flex flex-col gap-20 justify-center items-center py-10 px-20 rounded-md">
+    <div className="h-screen flex justify-center items-center max-w-4xl m-auto max-sm:flex-col">
+        <div className="max-w-3xl m-auto flex flex-col gap-20 max-sm:gap-2 justify-center items-center py-10 px-20 max-sm:px-5 rounded-md">
           <form className="" onSubmit={handleSubmit}>
           <span className="">Inscrivez vous et participez à des hackathons </span>
             <div className="flex flex-col gap-7 py-10">

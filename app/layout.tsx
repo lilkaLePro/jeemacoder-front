@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import ReactQueryProvider from "@/components/home/routeLayout";
 
 export const metadata: Metadata = {
   title: "jemacoder ",
@@ -18,8 +18,11 @@ export default function RootLayout({
         <meta name="csrf-token" content="{{ csrf_token() }}" ></meta>
       </head>
       <body>
-          
-        {children}
+        <ReactQueryProvider>
+          <main>
+          {children}
+          </main>
+        </ReactQueryProvider>
       
       </body>
     </html>
