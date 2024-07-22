@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Button } from "../button"
 import { ImgCollpsed } from "./img-collabsed"
-import { useState } from "react"
+import { useRef } from "react"
 
 export const HackathonCard = ({hackathons , onclick } : {onclick ?: () => void , hackathons : {
     logo_url : string , 
@@ -15,11 +15,11 @@ export const HackathonCard = ({hackathons , onclick } : {onclick ?: () => void ,
     const {logo_url , date_debut , name , organisateur , description , 
             status , participants } = hackathons
     const backend_url = process.env.NEXT_BUBLIC_BACKEND_URL;
-   
+    const divRef = useRef(null)
     console.log(backend_url);
     
     return (
-        <div onClick={onclick}
+        <div onClick={onclick} ref={divRef}
             className="max-w-4xl border-b p-10 flex flex-col gap-4 hover:bg-muted cursor-pointer ">
             <div className="flex gap-3">
                 <div>

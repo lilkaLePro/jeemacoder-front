@@ -6,6 +6,7 @@ import { useState } from "react";
 import { getHackathons } from "../utils/api/data";
 import { useQuery } from "@tanstack/react-query";
 import { Modal } from "@/components/modal";
+import { HackathonCardSkeleton } from "@/components/ui/skeletons";
 
 
 export default function Page() {
@@ -16,12 +17,9 @@ export default function Page() {
     });
 
     const [showDetails , setShowDetails] = useState<boolean>(false)
-    const onClose = () => {
-        setShowDetails(!showDetails)
-    }
+    const onClose = () => {() => setShowDetails(!showDetails)}
     console.log(showDetails);
-    
-    
+        
     return (<div className="max-w-4xl m-auto py-12 flex flex-col gap-10">
         <div>
             <input type="text" placeholder="Rechercher"
@@ -29,9 +27,9 @@ export default function Page() {
         </div>
         <div>
           {
-            isLoading ? <div>Loading...</div> : 
+            isLoading ? <HackathonCardSkeleton /> : 
             <ListItem 
-                items={hackathons}
+                items={data || []}
                 resourcename="hackathons"
                 component={HackathonCard}
                 className=""
@@ -47,6 +45,7 @@ export default function Page() {
         onClose={onClose}
         >
             voici le modal
+            <button onClick={onClose}>close modal</button>
         </Modal>
     </div> )
 }

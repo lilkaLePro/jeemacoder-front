@@ -4,13 +4,16 @@ export const ListItem = ({items , resourcename , component : Component , classNa
     resourcename : string , 
     component : React.ElementType , 
     className : string ,
-    onClick ?: (item : any) => void
+    onClick ?: () => void
 }) => {
-
     return (
-        <div className={className} onClick={onClick && onClick} >
+        <div className={className}  >
             {items.map((item , i ) => (
-                <Component key={i} {...{[resourcename]: item}} />
+                <Component 
+                        key={i} 
+                        {...{[resourcename]: item} } 
+                        onClick={onClick}
+                />
             ))}
         </div>
     )

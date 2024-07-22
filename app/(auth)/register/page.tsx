@@ -39,6 +39,7 @@ const Form = () => {
     ville : ''
   })
   const [pays , setPays ] = useState('')
+  const role = useUserRole()?.toString()
 
   const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
   const input = e.currentTarget;
@@ -46,7 +47,6 @@ const Form = () => {
 }
 // la donc il faut que je créé un custum hook qui return le role
 
-const role = useUserRole()?.toString()
 
 const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
   e.preventDefault()
@@ -118,7 +118,7 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
                     label="Password"
                   />
                   <FormInput
-                  id='profession'
+                  id='metier'
                     type="name"
                     placeholder="Enter your proffession"
                     value={value.metier}
@@ -160,8 +160,11 @@ const handleSubmit = (e : ChangeEvent<HTMLFormElement> ) => {
   </div>
   <div className="w-full md:w-1/2 mt-4 md:mt-0">
     {
-      
+      role === "organisateur" ? 
+      <div>Inscrivez vous en tant que {role} </div> : 
+      <div> inscrivez vous en tanque {role} </div>
     }
+    
   </div>
   </div>
   );
