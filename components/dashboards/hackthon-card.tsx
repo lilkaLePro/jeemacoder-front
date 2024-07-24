@@ -1,43 +1,49 @@
 import Image from "next/image"
 import { Button } from "../button"
 import { ImgCollpsed } from "./img-collabsed"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import { Modal } from "../modal"
+import Link from "next/link"
+import { DetailsButton } from "./detailsButton"
 
-export const HackathonCard = ({hackathons , onclick } : {onclick ?: () => void , hackathons : {
+    export const HackathonCard = ({hackathons , onClick , } : {hackathons : {
     logo_url : string , 
     date_debut : string,
     name : string ,
-    organisateur : string ,
+    structure_organisateur : string ,
     description : string ,
     status : "passe" | "encour" | "arriving" ,
-    participants : number
-}}) => {
-    const {logo_url , date_debut , name , organisateur , description , 
-            status , participants } = hackathons
-    const backend_url = process.env.NEXT_BUBLIC_BACKEND_URL;
-    const divRef = useRef(null)
-    console.log(backend_url);
+    participants : number ,
+    id : string }, 
+    onClick : () => void
+}) => {
+    const [showDetails , setShowDetails] = useState<boolean>(false)
+    console.log(showDetails);
     
+
+    const {logo_url , date_debut , name , structure_organisateur , description , 
+            status , participants , id } = hackathons
     return (
-        <div onClick={onclick} ref={divRef}
+        <DetailsButton id={id}>
+        <div onClick={onClick}
             className="max-w-4xl border-b p-10 flex flex-col gap-4 hover:bg-muted cursor-pointer ">
             <div className="flex gap-3">
                 <div>
-                <Image src={`/${backend_url}/public/storage/3pnTa.jpg`} 
+                <Image src={`/public/storage/3pnTa.jpg`} 
                     width={100} 
                     height={80} 
                     alt="hack logo" 
                     className="border rounded-md"/>
-                    <div>{status} </div>
+                    <div className="text-xs">{status} </div>
                 </div>
                 <div>
                     <p className="text-sm italic">{date_debut} </p>
                     <h1 className="text-2xl">{name} </h1>
-                    <h2 className="text-lg ">organisateur : {organisateur} </h2>
+                    <h2 className="text-md font-light ">organisateur : {structure_organisateur} </h2>
                 </div>
             </div>
             <div>
-                <p>{description} </p>
+                <p className="px-4 font-semibold">{description} </p>
             </div>
             <div  className="flex justify-between">
                 <div className="flex gap-4">
@@ -50,5 +56,5 @@ export const HackathonCard = ({hackathons , onclick } : {onclick ?: () => void ,
                 </div>
             </div>
         </div>
-    )
+    </DetailsButton>)
 }

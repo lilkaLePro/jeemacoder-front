@@ -14,8 +14,8 @@ export const SmallHackthonCard = ({hackathonCard} : {hackathonCard: {
     return (
         <div className="max-w-lg h-36 max-sm:h-60 bg-light-orange border rounded-xl p-4 flex flex-col justify-between ">
             <div className="flex gap-6 max-sm:flex-col">
-                <Image src={logo_url}
-                    width={100} 
+                <Image src={`/${logo_url}`}
+                    width={60} 
                     height={10} alt="logo_img"
                     className="border rounded-md max-sm:hidden"
                 />
@@ -35,7 +35,7 @@ export const SmallHackthonCard = ({hackathonCard} : {hackathonCard: {
             </div>
             <div className="flex justify-between text-xs items-center">
                 <p className="max-sm:hidden">{status} </p>
-                <div className="flex font-semibold items-center text-sm"> <ImgCollpsed />
+                <div className="flex items-center text-sm"> <ImgCollpsed />
                     +{countNbrParticipant}participants
                 </div>
             </div>

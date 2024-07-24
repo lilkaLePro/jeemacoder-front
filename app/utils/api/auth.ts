@@ -10,7 +10,7 @@ export const getUser = async () => {
         const response = fetch('http://localhost:8000/api/user' , options)
             .then(response => response.json())
             .catch(err => console.log("failed fecthing user",err))
-        
+
             return response
         }
 

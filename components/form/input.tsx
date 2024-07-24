@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import React, { ChangeEvent } from 'react'
 
-export default function FormInput({id , type = "text", value, placeholder, className, label , required , onChange } : 
+export default function FormInput({id , type = "text", value, placeholder, className, label , required , onChange , readOnly } : 
     {id ?: string , 
     type ?: string , 
     value :  string|number, 
@@ -13,10 +13,11 @@ export default function FormInput({id , type = "text", value, placeholder, class
     label ?: string , 
     required ?: boolean,
     onChange : (e : ChangeEvent<HTMLInputElement>) => void
+    readOnly ?:  boolean
 }) {
   return (
     <div className='max-w-xl text-dark-green '>
-      <label className='text-sm px-2 font-semibold ' >{label} 
+      <label className='text-md px-2 font-light' >{label} 
         {required && 
         <span className='text-red-500'>*</span> 
         }
@@ -28,7 +29,8 @@ export default function FormInput({id , type = "text", value, placeholder, class
               value={value} 
               onChange={onChange}
               placeholder={placeholder}
-              className={clsx('font-semibold w-full placeholder:text-[#636364] focus:border-light-green outline-none px-6 py-3 rounded-md bg-muted text-sm border max-sm:px-2 max-sm:py-2 max-sm:placeholder:text-xs'
+              readOnly={readOnly}
+              className={clsx('w-full placeholder:text-[#636364] focus:border-light-green outline-none px-6 py-3 rounded-md bg-muted text-xs border max-sm:px-2 max-sm:py-2 max-sm:placeholder:text-xs'
             , className)} />
         </div>
     </div>

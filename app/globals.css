@@ -51,3 +51,10 @@ body {
     height : 0px
   }
 }
+
+.selected {
+  @apply border p-6 w-full border-light-green rounded-md shadow-sm shadow-light-green
+}
+.unSelected {
+  @apply border p-6 w-full rounded-md
+}

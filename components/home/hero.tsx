@@ -7,10 +7,10 @@ function Hero() {
   <div className="max-w-4xl m-auto text-white ">
     {/* page aceuil */}
     <h1 className="text-center text-8xl font-extrabold p-10 max-sm:text-4xl">
-      Vos hackatons <br /> en <span className="text-dark-blue ">mieux</span>
+      Vos hackathons <br /> en <span className="text-dark-blue ">mieux</span>
     </h1>
     <p className="max-w-2xl text-center p-5 text-md m-auto max-sm:text-xl">
-      la meilleur plateforme d&apos;organisation et de gestion d&apos;hackaton dans le monde de demain.
+      la meilleure plateforme d&apos;organisation et de gestion d&apos;hackaton dans le monde de demain.
     </p>
   </div>
 

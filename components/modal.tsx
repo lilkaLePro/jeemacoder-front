@@ -6,12 +6,12 @@ export const Modal = ({showModal , onClose , children} : {
     }) => {
 
     return showModal ? (
-        <div className='z-10 w-full h-screen absolute flex justify-center items-center overflow-auto bg-muted left-0 right-0' 
+        <div className='absolute z-10 w-full h-screen flex justify-center items-center overflow-auto bg-muted left-0 right-0 top-0' 
             onClick={onClose}
         >
-            <div className='w-1/2 bg-light-green h-screen' 
+            <div className='' 
                 onClick={e => e.stopPropagation()} >
-                X {children}
+                {children}
             </div>
         </div>
     ) : null
